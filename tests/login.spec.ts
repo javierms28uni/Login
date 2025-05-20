@@ -20,7 +20,6 @@ test.describe('Login tests', () => {
     });
 
     test('Login should succeed with valid credentials', async ({page}) => {
-        await page.pause()
         await loginModal.login('prueba2005', 'Test200525');
         const successLoginModal = home.getSuccessLoginModal();
         await successLoginModal.isVisible();

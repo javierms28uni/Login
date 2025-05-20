@@ -12,15 +12,15 @@ export class LoginModal {
     private closeButton: Locator;
 
     constructor(private container: Locator) {
-        this.usernameInput = container.getByRole('textbox', {name: 'Usuario / Correo electrónico'});
-        this.passwordInput = container.getByRole('textbox', {name: 'Contraseña'});
-        this.submitButton = container.locator('button[id="btnaccess"]');
-        this.onboardingButton = container.getByRole('button', {name: 'Regístrate'}); // I would report the lack of an ID, I don't like selecting elements by text, it's not robust
-        this.closeButton = container.locator('button[class=closeModal]'); // I don't like using classes, they often change; I would report the lack of an ID to keep element selection consistent
-        this.recoverPassLink = container.getByRole('button', {name: '¿Olvidaste tu contraseña?'});
-        this.helpText = container.getByText('¿Aún no estás registrado? '); // Same thing, it's not robust; I'm selecting it for the test, but if the parent div with class=goReg is always the same, we could consider using that hierarchy; however, I’d try to select all elements in a consistent way using IDs
-        this.hideButton = container.locator('ion-icon[name="eye-off"]');
-        this.showButton = container.locator('ion-icon[name="eye"]');
+        this.usernameInput = this.container.getByRole('textbox', {name: 'Usuario / Correo electrónico'});
+        this.passwordInput = this.container.getByRole('textbox', {name: 'Contraseña'});
+        this.submitButton = this.container.locator('[id="btnaccess"]');
+        this.onboardingButton = this.container.getByRole('button', {name: 'Regístrate'}); // I would report the lack of an ID, I don't like selecting elements by text, it's not robust
+        this.closeButton = this.container.locator('button[class=closeModal]'); // I don't like using classes, they often change; I would report the lack of an ID to keep element selection consistent
+        this.recoverPassLink = this.container.getByRole('button', {name: '¿Olvidaste tu contraseña?'});
+        this.helpText = this.container.getByText('¿Aún no estás registrado? '); // Same thing, it's not robust; I'm selecting it for the test, but if the parent div with class=goReg is always the same, we could consider using that hierarchy; however, I’d try to select all elements in a consistent way using IDs
+        this.hideButton = this.container.locator('ion-icon[name="eye-off"]');
+        this.showButton = this.container.locator('ion-icon[name="eye"]');
     }
 
 

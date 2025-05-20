@@ -7,10 +7,10 @@ export class ErrorLoginModal {
     private recoverPassLink: Locator;
 
     constructor(private container: Locator) {
-        this.title = container.getByRole('heading', { name: 'Error de inicio de sesión' })
+        this.title = this.container.getByRole('heading', { name: 'Error de inicio de sesión' })
         this.description = this.container.getByText('Por favor, revisa los datos y vuelve a intentarlo. Ten en cuenta el uso de mayúsculas y minúsculas en tu contraseña.');
-        this.okButton = container.getByRole('button', {name: 'OK'});
-        this.recoverPassLink = container.getByRole('button', {name: '¿Olvidó su contraseña?'});
+        this.okButton = this.container.getByRole('button', {name: 'OK'});
+        this.recoverPassLink = this.container.getByRole('button', {name: '¿Olvidó su contraseña?'});
     }
 
 

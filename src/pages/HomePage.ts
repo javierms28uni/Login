@@ -1,6 +1,7 @@
 import {Page, Locator, expect} from '@playwright/test';
 import {LoginModal} from '../components/LoginModal';
 import {ErrorLoginModal} from '../components/ErrorLoginModal';
+import {SuccessLoginModal} from "../components/SuccessLoginModal";
 
 export class HomePage {
     private page: Page;
@@ -24,5 +25,10 @@ export class HomePage {
     getErrorLoginModal(): ErrorLoginModal {
         const container = this.page.locator('[class^="alert-wrapper"]');
         return new ErrorLoginModal(container);
+    }
+
+    getSuccessLoginModal(): SuccessLoginModal {
+        const container = this.page.locator('[class^="alert-wrapper"]');
+        return new SuccessLoginModal(container);
     }
 }

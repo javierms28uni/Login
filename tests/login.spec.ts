@@ -19,11 +19,12 @@ test.describe('Login tests', () => {
         await errorModal.isVisible();
     });
 
-    // test('Login should succeed with valid credentials', async ({page}) => {
-    //     await loginModal.login('correctUser', 'correctPass');
-    //
-    //     // Steps for successful login should go here
-    // });
+    test('Login should succeed with valid credentials', async ({page}) => {
+        await page.pause()
+        await loginModal.login('prueba2005', 'Test200525');
+        const successLoginModal = home.getSuccessLoginModal();
+        await successLoginModal.isVisible();
+    });
     test('The password eye icon works and shows and hides the password', async ({page}) => {
         await loginModal.expectTogglePasswordVisibilityWorks();
     });
